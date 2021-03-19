@@ -1,4 +1,4 @@
-package com.company.ej01;
+package com.company.clases;
 
 public class Rectangulo {
 

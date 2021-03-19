@@ -1,4 +1,4 @@
-package com.company.ej02;
+package com.company.clases;
 
 public class Empleado {
 
@@ -68,8 +68,7 @@ public class Empleado {
     }*/
 
     ///FUNCION TO STRING
-    @Override
-    public String toString() {
+    public String getEmpleado() {
         return "Empleado{" +
                 "dni=" + dni +
                 ", nombre='" + nombre + '\'' +
@@ -77,6 +76,5 @@ public class Empleado {
                 ", salario=" + salario +
                 '}';
     }
-
 
 }

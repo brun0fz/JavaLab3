@@ -1,4 +1,4 @@
-package com.company.ej03;
+package com.company.clases;
 
 public class ItemVenta {
 

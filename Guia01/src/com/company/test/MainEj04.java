@@ -1,14 +1,7 @@
-package com.company;
+package com.company.test;
 
-public class Main {
-
+public class MainEj04 {
     public static void main(String[] args) {
-
-
-
-
-
-
 
     }
 }

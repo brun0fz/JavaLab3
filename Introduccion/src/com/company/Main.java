@@ -1,10 +1,7 @@
-//Ejercicio 01
-
 package com.company;
 
 import java.io.PrintStream;
 import java.util.Scanner;
-
 
 public class Main {
 
@@ -28,6 +25,7 @@ public class Main {
     private static void exercise01() {
 
         System.out.println("\nExercise01\n");
+
 
         int N=5;
         double A=3.5;
@@ -101,8 +99,8 @@ public class Main {
             paridad="par";
         }
 
-        //System.out.println("A: " + A + " El numero es: " + paridad);
-        System.out.printf("A: %s El numero es: %s%n", A, paridad);
+        System.out.println("A: " + A + " El numero es: " + paridad);
+        //System.out.printf("A: %s El numero es: %s%n", A, paridad);
 
     }
 

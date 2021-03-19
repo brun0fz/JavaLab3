@@ -12,7 +12,7 @@ public class Rectangulo {
 
     }
 
-    public Rectangulo(double ancho, double alto){
+    public Rectangulo(double ancho, double alto) {
         this.ancho = ancho;
         this.alto = alto;
     }
@@ -32,6 +32,14 @@ public class Rectangulo {
 
     public void setAlto(double alto) {
         this.alto = alto;
+    }
+
+    public double calcArea() {
+        return ancho * alto;
+    }
+
+    public double calcPerimetro() {
+        return 2 * (ancho + alto);
     }
 
 }

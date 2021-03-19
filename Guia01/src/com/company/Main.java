@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.ej01.Rectangulo;
 import com.company.ej02.Empleado;
+import com.company.ej03.ItemVenta;
 
 public class Main {
 
@@ -36,6 +37,12 @@ public class Main {
         System.out.println("Salario Anual: " + empleCarlos.salarioAnual());*/
 
         ///Ejercicio 03
+        /*
+        ItemVenta perfume = new ItemVenta(0125,"Perfume", 65, 550);
+        System.out.println(perfume.getItemVenta());
+        */
+
+
 
 
 

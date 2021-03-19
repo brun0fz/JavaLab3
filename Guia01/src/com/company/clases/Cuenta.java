@@ -50,7 +50,7 @@ public class Cuenta {
         if (this.balance - sustraccion >= 0) {
             this.balance -= sustraccion;
         } else {
-            System.out.println("El dinero en la cuenta no es suficiente para cubrir la sustraccion");
+            System.out.println("El dinero en la cuenta no es suficiente para cubrir la sustraccion.");
         }
 
         return this.balance;

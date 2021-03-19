@@ -25,7 +25,7 @@ public class Main {
 
         ///Ejercicio 02
 
-        /*Empleado empleCarlos = new Empleado(23456345, "Carlos", "Gutierrez", 25000);
+        Empleado empleCarlos = new Empleado(23456345, "Carlos", "Gutierrez", 25000);
         Empleado empleAna = new Empleado(34234123, "Ana", "Sanchez", 27500);
 
         empleCarlos.mostrarEmpleado();
@@ -33,7 +33,7 @@ public class Main {
 
         empleCarlos.aumentarSalario(15);
 
-        System.out.println("Salario Anual: " + empleCarlos.salarioAnual());*/
+        System.out.println("Salario Anual: " + empleCarlos.salarioAnual());
 
 
 

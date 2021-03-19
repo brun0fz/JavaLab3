@@ -25,7 +25,7 @@ public class Main {
 
     }
 
-    public static void exercise01() {
+    private static void exercise01() {
 
         System.out.println("\nExercise01\n");
 
@@ -45,7 +45,7 @@ public class Main {
 
     }
 
-    public static void exercise02() {
+    private static void exercise02() {
 
         System.out.println("\nExercise02\n");
         int X=2;
@@ -58,7 +58,7 @@ public class Main {
     }
 
 
-        public static void exercise03() {
+    private static void exercise03() {
 
             System.out.println("\nExercise03\n");
 
@@ -73,7 +73,7 @@ public class Main {
 
         }
 
-    public static void exercise04() {
+    private static void exercise04() {
 
         System.out.println("\nExercise04\n");
 
@@ -89,7 +89,7 @@ public class Main {
         System.out.println("\nA = " + A + "\nB = " + B + "\nC = " + C + "\nD = " + D);
     }
 
-    public static void exercise05() {
+    private static void exercise05() {
 
         System.out.println("\nexercise 05\n");
 
@@ -106,7 +106,7 @@ public class Main {
 
     }
 
-    public static void exercise06() {
+    private static void exercise06() {
 
         System.out.println("\nexercise 06\n");
 
@@ -121,7 +121,7 @@ public class Main {
         out.printf("B: %s es un numero %s%n", B,rta);
     }
 
-    public static void exercise08(){
+    private static void exercise08(){
         scanner.reset();
         System.out.println("\nexercise 08\n");
 
@@ -137,7 +137,7 @@ public class Main {
 
     }
 
-    public static void exercise09(){
+    private static void exercise09(){
         scanner.reset();
         out.println("\nexercise 09\n");
 
@@ -155,7 +155,7 @@ public class Main {
 
     }
 
-    public static void exercise10(){
+    private static void exercise10(){
         scanner.reset();
 
         out.println("\nexercise 10\n");

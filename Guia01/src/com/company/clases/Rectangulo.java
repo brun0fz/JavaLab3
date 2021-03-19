@@ -4,8 +4,8 @@ public class Rectangulo {
 
     //Atributos
 
-    double ancho = 1.0;
-    double alto = 1.0;
+    private double ancho = 1.0;
+    private double alto = 1.0;
 
     //Constructores
     public Rectangulo() {

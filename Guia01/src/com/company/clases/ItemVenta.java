@@ -2,10 +2,10 @@ package com.company.clases;
 
 public class ItemVenta {
 
-    int id;
-    String descripcion;
-    int cantidad;
-    double pUnitario;
+    private int id;
+    private String descripcion;
+    private int cantidad;
+    private double pUnitario;
 
     public ItemVenta() {
     }

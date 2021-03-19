@@ -2,10 +2,10 @@ package com.company.clases;
 
 public class Empleado {
 
-    int dni;
-    String nombre;
-    String apellido;
-    double salario;
+    private int dni;
+    private String nombre;
+    private String apellido;
+    private double salario;
 
     public Empleado() {
     }
@@ -76,5 +76,4 @@ public class Empleado {
                 ", salario=" + salario +
                 '}';
     }
-
 }

@@ -8,7 +8,7 @@ public class MainEj03 {
 
         ItemVenta phone = new ItemVenta(2589, "S21", 699, 125000);
 
-        System.out.println(phone.getItemVenta());
+        System.out.println(phone);
 
     }
 }

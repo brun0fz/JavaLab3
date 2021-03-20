@@ -53,7 +53,8 @@ public class ItemVenta {
         return this.pUnitario * this.cantidad;
     }
 
-    public String getItemVenta() {
+    @Override
+    public String toString() {
         return "ItemVenta{" +
                 "id=" + id +
                 ", descripcion='" + descripcion + '\'' +

@@ -56,7 +56,8 @@ public class Cuenta {
         return this.balance;
     }
 
-    public String getCuenta() {
+    @Override
+    public String toString() {
         return "Cuenta{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +

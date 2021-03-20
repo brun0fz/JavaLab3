@@ -13,7 +13,7 @@ public class MainEj04 {
 
         cuentita.debito(30000);
 
-        System.out.println(cuentita.getCuenta());
+        System.out.println(cuentita);
 
     }
 }

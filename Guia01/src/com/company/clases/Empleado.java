@@ -68,7 +68,9 @@ public class Empleado {
     }*/
 
     ///FUNCION TO STRING
-    public String getEmpleado() {
+
+    @Override
+    public String toString() {
         return "Empleado{" +
                 "dni=" + dni +
                 ", nombre='" + nombre + '\'' +

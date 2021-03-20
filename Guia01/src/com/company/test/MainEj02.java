@@ -10,10 +10,8 @@ public class MainEj02 {
         Empleado empleCarlos = new Empleado(23456345, "Carlos", "Gutierrez", 25000);
         Empleado empleAna = new Empleado(34234123, "Ana", "Sanchez", 27500);
 
-        String ana = empleAna.getEmpleado();
-
-        System.out.println(empleCarlos.getEmpleado());
-        System.out.println(ana);
+        System.out.println(empleAna);
+        System.out.println(empleCarlos);
 
         empleCarlos.aumentarSalario(15);
 

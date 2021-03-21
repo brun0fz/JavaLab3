@@ -35,11 +35,11 @@ public class Rectangulo {
     }
 
     public double calcArea() {
-        return ancho * alto;
+        return this.ancho * this.alto;
     }
 
     public double calcPerimetro() {
-        return 2 * (ancho + alto);
+        return 2 * (this.ancho + this.alto);
     }
 
 }

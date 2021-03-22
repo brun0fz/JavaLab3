@@ -5,7 +5,7 @@ import com.company.clases.Rectangulo;
 public class MainEj01 {
     public static void main(String[] args) {
 
-        ///prueba
+        ///pruebaasd
 
         Rectangulo rectangulito = new Rectangulo(3,6);
 

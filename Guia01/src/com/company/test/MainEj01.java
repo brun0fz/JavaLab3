@@ -5,12 +5,6 @@ import com.company.clases.Rectangulo;
 public class MainEj01 {
     public static void main(String[] args) {
 
-        ///test
-
-        ///test 2
-
-        //test 3
-
         Rectangulo rectangulito = new Rectangulo(3,6);
 
         System.out.println("Alto: " + rectangulito.getAlto() + " Ancho: " + rectangulito.getAncho());

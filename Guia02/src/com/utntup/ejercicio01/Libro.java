@@ -20,7 +20,6 @@ public class Libro {
     h. Modificar la clase Libro, para que acepte más de 1 Autor. Y realizar los cambios necesarios en el
     método del punto g, para imprimir un nuevo mensaje que liste los autores que contribuyeron a ese libro.*/
 
-
     private String titulo;
     private double precio;
     private int stock;
@@ -31,6 +30,34 @@ public class Libro {
         this.precio = precio;
         this.stock = stock;
         this.autor = autor;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.utntup.ejercicio01;
 
-public class Libro {
-
    /* 1. Es necesario modelar el objeto de tipo Libro con las siguientes caracteristicas, titulo, precio, stock y
     Autor, este último posee las características de nombre, apellido, email y genero ( ‘M’ o ‘F’ ).
     Para este ejercicio vamos a asumir que un libro tiene un único autor. Ejecute las siguientes instrucciones:
@@ -20,10 +18,18 @@ public class Libro {
     h. Modificar la clase Libro, para que acepte más de 1 Autor. Y realizar los cambios necesarios en el
     método del punto g, para imprimir un nuevo mensaje que liste los autores que contribuyeron a ese libro.*/
 
+import java.util.Arrays;
+
+public class Libro {
+
     private String titulo;
     private double precio;
     private int stock;
     private Autor autor;
+    private Autor[] autores;
+
+    public Libro() {
+    }
 
     public Libro(String titulo, double precio, int stock, Autor autor) {
         this.titulo = titulo;
@@ -32,8 +38,11 @@ public class Libro {
         this.autor = autor;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public Libro(String titulo, double precio, int stock, Autor[] autores) {
+        this.titulo = titulo;
+        this.precio = precio;
+        this.stock = stock;
+        this.autores = autores;
     }
 
     public String getTitulo() {
@@ -60,6 +69,14 @@ public class Libro {
         this.stock = stock;
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
     @Override
     public String toString() {
         return "Libro{" +
@@ -68,5 +85,13 @@ public class Libro {
                 ", stock=" + stock +
                 ", autor=" + autor +
                 '}';
+    }
+
+    public String print(){
+        return "El libro, " + this.titulo + " de " + this.autor.getNombre() + ". Se vende a " + this.precio + " pesos.";
+    }
+
+    public String printAuthors(){
+        return "El libro, " + this.titulo + " de los autores:  " + Arrays.toString(autores) + ". Se vende a " + this.precio + " pesos.";
     }
 }

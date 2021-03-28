@@ -24,12 +24,33 @@ import com.utntup.ejercicio01.Libro;
 public class MainEj01 {
     public static void main(String[] args) {
 
-        Autor autorJoshua = new Autor("Joshua", "Bloch", "joshua@email.com", 'm');
-        Libro libroJava = new Libro("Effective Java", 450, 150, autorJoshua);
+        Autor joshua = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
 
-        System.out.println(autorJoshua);
-        System.out.println(libroJava);
-        
+        Autor bruno = new Autor("Bruno", "Fabrizio", "bfzio@gmail.com", 'M');
+
+        Autor[] autores= new Autor[2];
+        autores[0]=joshua;
+        autores[1]=bruno;
+
+        System.out.println(joshua);
+
+        //Libro Java = new Libro("Effective Java", 450, 150, joshua);
+        Libro Java = new Libro("Effective Java", 450, 150, autores);
+
+        System.out.println(Java);
+
+        Java.setPrecio(500);
+        Java.setStock(50);
+
+        System.out.println(Java.getAutor());
+
+        System.out.println(Java.printAuthors());
+
+
+
+
+
+
 
 
     }

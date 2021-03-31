@@ -40,7 +40,7 @@ public class MainEj01 {
         System.out.println(Java);
 
         Java.setPrecio(500);
-        Java.setStock(50);
+        Java.setStock(Java.getStock() + 50);
 
         System.out.println(Java.getAutor());
 

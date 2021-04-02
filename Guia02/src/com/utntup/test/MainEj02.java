@@ -2,21 +2,34 @@ package com.utntup.test;
 
 import com.utntup.ejercicio02.Cliente;
 import com.utntup.ejercicio02.Factura;
+import com.utntup.ejercicio02.ItemVenta;
 
 public class MainEj02 {
 
     public static void main(String[] args) {
 
-        Cliente cliente1 = new Cliente("Bruno Fabrizio", "brunofabrizio15@gmail.com", 15);
+        Cliente elMejor = new Cliente("Danilo", "danimdq@gmail.com", 15);
 
-        System.out.println(cliente1);
+        System.out.println(elMejor);
 
-        Factura facturaC1 = new Factura(790, cliente1);
+        Factura facturita = new Factura(1500, elMejor);
 
-        System.out.println("El monto total es de $" + facturaC1.getMontoTotal() + " Y con su " + cliente1.getDescuento() + "% de descuento le queda en: " + facturaC1.getMontoDesc());
+        System.out.println("Total: " + facturita.getMontoTotal() + "\nDescuento: " + facturita.getMontoDesc());
 
-        System.out.println(facturaC1);
+        ///
+
+        Cliente elPeor = new Cliente("Bruno", "bruno@gmail.com", 10);
+
+        ItemVenta arroz = new ItemVenta("arroz", "integral", 85);
+        ItemVenta leche = new ItemVenta("leche", "serenisima", 70);
+        ItemVenta harina = new ItemVenta("harina", "0000", 65);
+
+        ItemVenta[] carrito = new ItemVenta[]{arroz, leche, harina};
+
+        Factura facturaElPeor = new Factura(elPeor, carrito);
+
+        System.out.println(facturaElPeor);
+
 
     }
-
 }

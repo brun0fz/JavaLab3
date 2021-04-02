@@ -19,14 +19,6 @@ public class Cliente {
         this.descuento = descuento;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -57,7 +49,7 @@ public class Cliente {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", email='" + email + '\'' +
-                ", descuento=" + descuento + "%" +
+                ", descuento=" + descuento +
                 '}';
     }
 }

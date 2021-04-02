@@ -3,15 +3,18 @@ package com.utntup.ejercicio02;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class Factura {
 
     private UUID id;
-    private LocalDateTime fecha;
     private double montoTotal;
+    private LocalDateTime fecha;
 
     private Cliente cliente;
+
+    private ItemVenta[] itemVentas;
 
     public Factura() {
     }
@@ -23,12 +26,12 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
+    public Factura(Cliente cliente, ItemVenta[] itemVentas) {
+        this.id = UUID.randomUUID();
+        this.montoTotal = sumarCarrito(itemVentas);
+        this.fecha = LocalDateTime.now();
+        this.cliente = cliente;
+        this.itemVentas = itemVentas;
     }
 
     public double getMontoTotal() {
@@ -39,14 +42,6 @@ public class Factura {
         this.montoTotal = montoTotal;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -55,19 +50,32 @@ public class Factura {
         this.cliente = cliente;
     }
 
-
     public double getMontoDesc() {
-        return montoTotal - (montoTotal * (cliente.getDescuento() / 100));
+        double resultado = (cliente.getDescuento() > 0) ? montoTotal - (montoTotal * (cliente.getDescuento() / 100)) : 0;
+
+        return resultado;
+    }
+
+    public double sumarCarrito(ItemVenta[] itemVentas) {
+        double suma=0;
+
+        for (ItemVenta carrito : itemVentas) {
+
+            suma += carrito.getPrecioUnitario();
+        }
+
+        return suma;
     }
 
     @Override
     public String toString() {
         return "Factura{" +
                 "id=" + id +
-                ", fecha=" + fecha +
-                ", monto=" + montoTotal +
+                ", montoTotal=" + montoTotal +
                 ", montoDesc=" + getMontoDesc() +
-                ", " + cliente +
+                ", fecha=" + fecha +
+                ", cliente=" + cliente +
+                ", items: " + Arrays.toString(itemVentas) +
                 '}';
     }
 }

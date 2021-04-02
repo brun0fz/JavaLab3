@@ -2,18 +2,29 @@ package com.utntup.ejercicio01;
 
 public class Autor {
 
-    private String nombre;
-    private String apellido;
-    private String email;
-    private char genero; //M o F
+        private String nombre;
+        private String apellido;
+        private String email;
+        private char genero;
 
-    public Autor(){}
+    public Autor(String charly, String s) {
+    }
 
-    public Autor(String nombre, String apellido, String email, char genero){
+    public Autor(String nombre, String apellido, String email, char genero) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.email=email;
-        this.genero=genero;
+        this.email = email;
+        this.genero = genero;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", genero=" + genero +
+                '}';
     }
 
     public String getNombre() {
@@ -46,15 +57,5 @@ public class Autor {
 
     public void setGenero(char genero) {
         this.genero = genero;
-    }
-
-    @Override
-    public String toString() {
-        return "Autor{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
-                ", genero=" + genero +
-                '}';
     }
 }

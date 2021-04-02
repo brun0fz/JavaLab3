@@ -18,80 +18,83 @@ package com.utntup.ejercicio01;
     h. Modificar la clase Libro, para que acepte más de 1 Autor. Y realizar los cambios necesarios en el
     método del punto g, para imprimir un nuevo mensaje que liste los autores que contribuyeron a ese libro.*/
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.UUID;
 
 public class Libro {
 
-    private String titulo;
-    private double precio;
-    private int stock;
-    private Autor autor;
-    private Autor[] autores;
+        private String titulo;
+        private double precio;
+        private int stock;
 
-    public Libro() {
-    }
+        private Autor autor;
+        private Autor[] autores;
 
-    public Libro(String titulo, double precio, int stock, Autor autor) {
-        this.titulo = titulo;
-        this.precio = precio;
-        this.stock = stock;
-        this.autor = autor;
-    }
+        public Libro() {
+        }
 
-    public Libro(String titulo, double precio, int stock, Autor[] autores) {
-        this.titulo = titulo;
-        this.precio = precio;
-        this.stock = stock;
-        this.autores = autores;
-    }
+        public Libro(String titulo, double precio, int stock, Autor autor) {
+                this.titulo = titulo;
+                this.precio = precio;
+                this.stock = stock;
+                this.autor = autor;
+        }
 
-    public String getTitulo() {
-        return titulo;
-    }
+        public Libro(String titulo, double precio, int stock, Autor[] autores) {
+                this.titulo = titulo;
+                this.precio = precio;
+                this.stock = stock;
+                this.autores = autores;
+        }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+        public String getTitulo() {
+                return titulo;
+        }
 
-    public double getPrecio() {
-        return precio;
-    }
+        public void setTitulo(String titulo) {
+                this.titulo = titulo;
+        }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+        public double getPrecio() {
+                return precio;
+        }
 
-    public int getStock() {
-        return stock;
-    }
+        public void setPrecio(double precio) {
+                this.precio = precio;
+        }
 
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
+        public int getStock() {
+                return stock;
+        }
 
-    public Autor getAutor() {
-        return autor;
-    }
+        public void setStock(int stock) {
+                this.stock = stock;
+        }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
+        public Autor getAutor() {
+                return autor;
+        }
 
-    @Override
-    public String toString() {
-        return "Libro{" +
-                "titulo='" + titulo + '\'' +
-                ", precio=" + precio +
-                ", stock=" + stock +
-                ", autor=" + autor +
-                '}';
-    }
+        public void setAutor(Autor autor) {
+                this.autor = autor;
+        }
 
-    public String print(){
-        return "El libro, " + this.titulo + " de " + this.autor.getNombre() + ". Se vende a " + this.precio + " pesos.";
-    }
+        public String getMensaje(){
+                return "El libro, " + titulo + " de " + autor.getNombre() + ". Se vende a " + precio + " pesos." ;
+        }
 
-    public String printAuthors(){
-        return "El libro, " + this.titulo + " de los autores:  " + Arrays.toString(autores) + ". Se vende a " + this.precio + " pesos.";
-    }
+        public String getMensajeArray(){
+                return "El libro, " + titulo + " de los autores: " + Arrays.toString(autores) + ". Se vende a " + precio + " pesos." ;
+        }
+
+        @Override
+        public String toString() {
+                return "Libro{" +
+                        "titulo='" + titulo + '\'' +
+                        ", precio=" + precio +
+                        ", stock=" + stock +
+                        ", autor=" + autor +
+                        '}';
+        }
 }

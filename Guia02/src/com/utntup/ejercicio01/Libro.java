@@ -24,77 +24,95 @@ import java.util.UUID;
 
 public class Libro {
 
-        private String titulo;
-        private double precio;
-        private int stock;
+    private String titulo;
+    private double precio;
+    private int stock;
 
-        private Autor autor;
-        private Autor[] autores;
+    private Autor autor;
+    private Autor[] autores;
 
-        public Libro() {
+    public Libro() {
+    }
+
+    public Libro(String titulo, double precio, int stock, Autor autor) {
+        this.titulo = titulo;
+        this.precio = precio;
+        this.stock = stock;
+        this.autor = autor;
+    }
+
+    public Libro(String titulo, double precio, int stock, Autor[] autores) {
+        this.titulo = titulo;
+        this.precio = precio;
+        this.stock = stock;
+        this.autores = autores;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
+    public String getMensaje() {
+        return "El libro, " + titulo + " de " + autor.getNombre() + ". Se vende a " + precio + " pesos.";
+    }
+
+    public StringBuilder mostrarAutores() {
+        StringBuilder nombres = new StringBuilder();
+
+        for (Autor autor : autores) {
+            if (autor != null) {
+                nombres.append(autor.getNombre());
+                nombres.append(" ");
+                nombres.append(autor.getApellido());
+                nombres.append(" ");
+            }
         }
+        return nombres;
+    }
 
-        public Libro(String titulo, double precio, int stock, Autor autor) {
-                this.titulo = titulo;
-                this.precio = precio;
-                this.stock = stock;
-                this.autor = autor;
-        }
+    public String getMensajeArray() {
+        return "El libro, " + titulo + " de los autores: " + mostrarAutores() + ". Se vende a " + precio + " pesos.";
+    }
 
-        public Libro(String titulo, double precio, int stock, Autor[] autores) {
-                this.titulo = titulo;
-                this.precio = precio;
-                this.stock = stock;
-                this.autores = autores;
-        }
-
-        public String getTitulo() {
-                return titulo;
-        }
-
-        public void setTitulo(String titulo) {
-                this.titulo = titulo;
-        }
-
-        public double getPrecio() {
-                return precio;
-        }
-
-        public void setPrecio(double precio) {
-                this.precio = precio;
-        }
-
-        public int getStock() {
-                return stock;
-        }
-
-        public void setStock(int stock) {
-                this.stock = stock;
-        }
-
-        public Autor getAutor() {
-                return autor;
-        }
-
-        public void setAutor(Autor autor) {
-                this.autor = autor;
-        }
-
-        public String getMensaje(){
-                return "El libro, " + titulo + " de " + autor.getNombre() + ". Se vende a " + precio + " pesos." ;
-        }
-
-        public String getMensajeArray(){
+        /*public String getMensajeArray(){
                 return "El libro, " + titulo + " de los autores: " + Arrays.toString(autores) + ". Se vende a " + precio + " pesos." ;
-        }
+        }*/
 
-        @Override
-        public String toString() {
-                return "Libro{" +
-                        "titulo='" + titulo + '\'' +
-                        ", precio=" + precio +
-                        ", stock=" + stock +
-                        ", autor=" + autor +
-                        '}';
-        }
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", precio=" + precio +
+                ", stock=" + stock +
+                ", autor=" + autor +
+                '}';
+    }
 }

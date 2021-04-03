@@ -3,6 +3,8 @@ package com.utntup.test;
 import com.utntup.ejercicio03.Cliente;
 import com.utntup.ejercicio03.Cuenta;
 
+import java.util.Arrays;
+
 public class MainEj03 {
 
     public static void main(String[] args) {
@@ -16,10 +18,11 @@ public class MainEj03 {
         System.out.println(accBruno);
 
         accBruno.extraer(2500);
+        accBruno.extraer(2500);
         accBruno.extraer(8000);
         accBruno.depositar(2500);
 
-
+       accBruno.mostrarOperaciones();
 
     }
 }

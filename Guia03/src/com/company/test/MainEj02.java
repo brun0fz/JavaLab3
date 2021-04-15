@@ -51,6 +51,7 @@ public class MainEj02 {
             if (p instanceof Estudiante) {
 
                 ingresosCuota += ((Estudiante) p).getCuotaMensual();
+
             }
         }
 

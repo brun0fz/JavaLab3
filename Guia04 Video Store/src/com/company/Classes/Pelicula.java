@@ -7,6 +7,7 @@ public class Pelicula {
     private String titulo;
     private LocalDate fechaDeLanzamiento;
     private int duracion;
+    private String genero;
     private String clasificacion;
     private String paisDeOrigen;
     private String descripcion;
@@ -15,10 +16,11 @@ public class Pelicula {
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, LocalDate fechaDeLanzamiento, int duracion, String clasificacion, String paisDeOrigen, String descripcion, int cantidad) {
+    public Pelicula(String titulo, LocalDate fechaDeLanzamiento, int duracion, String genero, String clasificacion, String paisDeOrigen, String descripcion, int cantidad) {
         this.titulo = titulo;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
         this.duracion = duracion;
+        this.genero = genero;
         this.clasificacion = clasificacion;
         this.paisDeOrigen = paisDeOrigen;
         this.descripcion = descripcion;
@@ -31,6 +33,7 @@ public class Pelicula {
                 "titulo='" + titulo + '\'' +
                 ", fechaDeLanzamiento=" + fechaDeLanzamiento +
                 ", duracion=" + duracion +
+                ", genero='" + genero + '\'' +
                 ", clasificacion='" + clasificacion + '\'' +
                 ", paisDeOrigen='" + paisDeOrigen + '\'' +
                 ", descripcion='" + descripcion + '\'' +

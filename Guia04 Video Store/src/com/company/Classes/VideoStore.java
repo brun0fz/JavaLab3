@@ -1,8 +1,8 @@
 package com.company.Classes;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class VideoStore {
 
@@ -26,13 +26,13 @@ public class VideoStore {
 
     public void mostrarPeliculas() {
         System.out.println("\nCatalogo de peliculas \n");
-        for (var pelicula : peliculasList) {
+        for (Pelicula pelicula : peliculasList) {
             System.out.println(pelicula);
         }
     }
 
     public Pelicula buscarPelicula(String nombrePelicula) {
-        for (var pelicula : peliculasList) {
+        for (Pelicula pelicula : peliculasList) {
             if (pelicula.getTitulo().equalsIgnoreCase(nombrePelicula)) {
                 return pelicula;
             }
@@ -50,23 +50,9 @@ public class VideoStore {
         clientesList.add(cliente);
     }
 
-    public Cliente crearCliente() {
-        Scanner keyboard = new Scanner(System.in);
-
-        System.out.print("Ingrese nombre: ");
-        String nombre = keyboard.nextLine();
-        System.out.print("Ingrese telefono: ");
-        String telefono = keyboard.nextLine();
-        System.out.print("Ingrese direccion: ");
-        String direccion = keyboard.nextLine();
-
-        Cliente cliente = new Cliente(nombre, telefono, direccion);
-
-        return cliente;
-    }
 
     public Cliente buscarCliente(String nombreCliente) {
-        for (var cliente : clientesList) {
+        for (Cliente cliente : clientesList) {
             if (cliente.getNombre().equalsIgnoreCase(nombreCliente)) {
                 return cliente;
             }
@@ -76,7 +62,7 @@ public class VideoStore {
 
     public void mostrarClientes() {
         System.out.println("\nClientes: \n");
-        for (var cliente : clientesList) {
+        for (Cliente cliente : clientesList) {
             System.out.println(cliente);
         }
     }
@@ -87,7 +73,7 @@ public class VideoStore {
 
     ///Alquileres
     public Alquiler buscarAlquiler(int id) {
-        for (var alquiler : alquileresList) {
+        for (Alquiler alquiler : alquileresList) {
             if (alquiler.getId() == id) {
                 return alquiler;
             }
@@ -118,18 +104,12 @@ public class VideoStore {
 
                 Alquiler alquiler = new Alquiler(pelicula, cliente);
                 alquileresList.add(alquiler);
-                cliente.listaAlquieres.add(alquiler.toString());
+                cliente.listaAlquieres.add(alquiler);
                 pelicula.setContadorAlquiler(pelicula.getContadorAlquiler() + 1);
 
             } else {
 
-                System.out.println("El cliente no existe, se va a crear uno nuevo");
-
-                Cliente nuevoCliente = crearCliente();
-                clientesList.add(nuevoCliente);
-
-                Alquiler alquiler = new Alquiler(pelicula, nuevoCliente);
-                alquileresList.add(alquiler);
+                throw new RuntimeException("No existe el cliente");
             }
 
         } else {
@@ -142,7 +122,7 @@ public class VideoStore {
 
     public void mostrarAlquileres() {
         System.out.println("\nAlquileres vigentes:\n");
-        for (var alquiler : alquileresList) {
+        for (Alquiler alquiler : alquileresList) {
             System.out.println(alquiler);
         }
     }
@@ -150,7 +130,7 @@ public class VideoStore {
     public void mostrarAlquieresCliente(String nombreCliente) {
         System.out.println("Alquieleres de " + nombreCliente);
         Cliente cliente = buscarCliente(nombreCliente);
-        for(var alquiler : cliente.listaAlquieres){
+        for (Alquiler alquiler : cliente.listaAlquieres) {
             System.out.println(alquiler);
         }
     }
@@ -167,11 +147,19 @@ public class VideoStore {
 
     public void mostrarDevolucionesDelDia() {
         System.out.println("Devoluciones del dia:\n");
-        for (var alquiler : alquileresList) {
+        for (Alquiler alquiler : alquileresList) {
             if (alquiler.getfDevolucion().equals(LocalDate.now())) {
                 System.out.println(alquiler);
             }
         }
+    }
+
+    public List<Pelicula> ordenarPeliculas() {
+        List<Pelicula> pelisOrdenadas = peliculasList;
+
+        return pelisOrdenadas.stream()
+                .sorted((Pelicula p1, Pelicula p2) -> p2.getContadorAlquiler() - p1.getContadorAlquiler())
+                .collect(Collectors.toList());
     }
 
 

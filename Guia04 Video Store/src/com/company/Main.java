@@ -19,7 +19,7 @@ public class Main {
         donVideo.nuevoCliente("Bruno Fabrizio", "4711045", "Millan 828");
         donVideo.nuevoCliente("Carlos Miranda", "5655443", "Luro 3200");
 
-        donVideo.nuevoAlquiler("carlos miranda", "star wars III");
+        donVideo.nuevoAlquiler("nico", "star wars III");
         donVideo.nuevoAlquiler("Bruno Fabrizio", "Star Wars V");
         donVideo.nuevoAlquiler("Bruno Fabrizio", "Star Wars III");
 
@@ -32,6 +32,8 @@ public class Main {
         donVideo.mostrarAlquieresCliente("Bruno Fabrizio");
 
         donVideo.mostrarPeliculas();
+
+        System.out.println(donVideo.ordenarPeliculas());
 
 
     }

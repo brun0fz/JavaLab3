@@ -1,6 +1,5 @@
 package com.company.Classes;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,7 @@ public class Cliente {
     private String telefono;
     private String direccion;
 
-    List<String> listaAlquieres = new ArrayList<>();
+    List<Alquiler> listaAlquieres = new ArrayList<>();
 
     public Cliente() {
     }

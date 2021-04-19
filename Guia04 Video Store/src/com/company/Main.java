@@ -21,9 +21,18 @@ public class Main {
 
         donVideo.nuevoAlquiler("carlos miranda", "star wars III");
         donVideo.nuevoAlquiler("Bruno Fabrizio", "Star Wars V");
+        donVideo.nuevoAlquiler("Bruno Fabrizio", "Star Wars III");
 
         donVideo.mostrarAlquileres();
 
+        //donVideo.devolucion(1);
+
         donVideo.mostrarDevolucionesDelDia();
+
+        donVideo.mostrarAlquieresCliente("Bruno Fabrizio");
+
+        donVideo.mostrarPeliculas();
+
+
     }
 }

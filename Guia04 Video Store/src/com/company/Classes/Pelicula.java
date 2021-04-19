@@ -13,6 +13,8 @@ public class Pelicula {
     private String descripcion;
     private int cantidad;
 
+    private int contadorAlquiler=0;
+
     public Pelicula() {
     }
 
@@ -39,6 +41,14 @@ public class Pelicula {
         this.cantidad = cantidad;
     }
 
+    public void setContadorAlquiler(int contadorAlquiler) {
+        this.contadorAlquiler = contadorAlquiler;
+    }
+
+    public int getContadorAlquiler() {
+        return contadorAlquiler;
+    }
+
     @Override
     public String toString() {
         return "Pelicula{" +
@@ -50,6 +60,7 @@ public class Pelicula {
                 ", paisDeOrigen='" + paisDeOrigen + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", cantidad=" + cantidad +
+                ", veces alquilada=" + contadorAlquiler +
                 '}';
     }
 }

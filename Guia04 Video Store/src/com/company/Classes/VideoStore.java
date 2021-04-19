@@ -1,6 +1,7 @@
 package com.company.Classes;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class VideoStore {
@@ -117,6 +118,8 @@ public class VideoStore {
 
                 Alquiler alquiler = new Alquiler(pelicula, cliente);
                 alquileresList.add(alquiler);
+                cliente.listaAlquieres.add(alquiler.toString());
+                pelicula.setContadorAlquiler(pelicula.getContadorAlquiler() + 1);
 
             } else {
 
@@ -144,6 +147,14 @@ public class VideoStore {
         }
     }
 
+    public void mostrarAlquieresCliente(String nombreCliente) {
+        System.out.println("Alquieleres de " + nombreCliente);
+        Cliente cliente = buscarCliente(nombreCliente);
+        for(var alquiler : cliente.listaAlquieres){
+            System.out.println(alquiler);
+        }
+    }
+
     public void devolucion(int alquilerId) {
         Alquiler alquiler = buscarAlquiler(alquilerId);
         if (alquiler != null) {
@@ -154,15 +165,14 @@ public class VideoStore {
         }
     }
 
-    public void mostrarDevolucionesDelDia(){
+    public void mostrarDevolucionesDelDia() {
         System.out.println("Devoluciones del dia:\n");
-        for(var alquiler : alquileresList){
-            if(alquiler.getfDevolucion() == LocalDate.now()){
+        for (var alquiler : alquileresList) {
+            if (alquiler.getfDevolucion().equals(LocalDate.now())) {
                 System.out.println(alquiler);
             }
         }
     }
-
 
 
 }

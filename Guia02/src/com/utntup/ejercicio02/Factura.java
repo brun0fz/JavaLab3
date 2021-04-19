@@ -28,10 +28,10 @@ public class Factura {
 
     public Factura(Cliente cliente, ItemVenta[] itemVentas) {
         this.id = UUID.randomUUID();
-        this.montoTotal = sumarCarrito(itemVentas);
+        this.itemVentas = itemVentas;
+        this.montoTotal = sumarCarrito();
         this.fecha = LocalDateTime.now();
         this.cliente = cliente;
-        this.itemVentas = itemVentas;
     }
 
     public double getMontoTotal() {
@@ -56,10 +56,10 @@ public class Factura {
         return resultado;
     }
 
-    public double sumarCarrito(ItemVenta[] itemVentas) {
+    public double sumarCarrito() {
         double suma=0;
 
-        for (ItemVenta carrito : itemVentas) {
+        for (ItemVenta carrito : this.itemVentas) {
 
             suma += carrito.getPrecioUnitario();
         }

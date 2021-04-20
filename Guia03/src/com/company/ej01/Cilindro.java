@@ -35,5 +35,4 @@ public class Cilindro extends Circulo {
         return "Cilindro: subclase de " + super.toString() + " altura=" + altura + " area= " + getArea();
     }
 
-
 }

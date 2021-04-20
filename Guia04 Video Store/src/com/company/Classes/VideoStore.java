@@ -50,7 +50,6 @@ public class VideoStore {
         clientesList.add(cliente);
     }
 
-
     public Cliente buscarCliente(String nombreCliente) {
         for (Cliente cliente : clientesList) {
             if (cliente.getNombre().equalsIgnoreCase(nombreCliente)) {
@@ -62,9 +61,7 @@ public class VideoStore {
 
     public void mostrarClientes() {
         System.out.println("\nClientes: \n");
-        for (Cliente cliente : clientesList) {
-            System.out.println(cliente);
-        }
+        clientesList.stream().forEach(System.out::println);
     }
 
     public List<Cliente> getClientesList() {
@@ -109,7 +106,8 @@ public class VideoStore {
 
             } else {
 
-                throw new RuntimeException("No existe el cliente");
+                //throw new RuntimeException("No existe el cliente");
+                System.out.println("El cliente no existe");
             }
 
         } else {
@@ -161,6 +159,31 @@ public class VideoStore {
                 .sorted((Pelicula p1, Pelicula p2) -> p2.getContadorAlquiler() - p1.getContadorAlquiler())
                 .collect(Collectors.toList());
     }
+
+    public void mostrarPelisOrd(){
+        List<Pelicula> pelisOrd = ordenarPeliculas();
+
+        System.out.println("\nPeliculas ordenadas por popularidad: \n");
+
+        for(Pelicula pelicula : pelisOrd){
+            System.out.println(pelicula);
+        }
+    }
+
+
+    public void mostrarPelisGenero(String genero){
+        List<Pelicula> pelisOrd = ordenarPeliculas();
+
+        System.out.println("\nPeliculas de genero: " + genero);
+
+        for(Pelicula pelicula : pelisOrd){
+            if(pelicula.getGenero() == genero){
+                System.out.println(pelicula);
+            }
+        }
+    }
+
+
 
 
 }

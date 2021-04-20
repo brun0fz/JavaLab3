@@ -33,6 +33,10 @@ public class Pelicula {
         return titulo;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
     public int getCantidad() {
         return cantidad;
     }
